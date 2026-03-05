@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <math.h>
+#include >math.h>
 
 int playerscore;
 int dealerscore;
@@ -8,10 +8,8 @@ int dealercard;
 int purse;
 int deck[104];
 
-
 void DealDeck(){
-
-
+ads[ahsd[gohaoidsgh
 }
 
 void main(){
