@@ -37,14 +37,21 @@ int tempNum;
 }
 
 void dealCard(bool Player){
-	
+	int suitNum;
+	char cardNameArr[14][7] = {"NA", "Ace", "Duce", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King",};
+	char suitArr[4][10] = {"Clubs", "Hearts", "Spades", "Diamonds",}; // arrays for suit and card name
+	suitNum = ((deck[deckPosition] / 13) % 4 );//finds the suit of the card
 	card = (deck[deckPosition] % 13) + 1; //Draws card from the shuffled deck
+	char *suit = suitArr[suitNum]; 
+	char *cardName = cardNameArr[card];  // makes a character veriable for the name and suit of the current card
+	
 	
 	if (card > 10){ //Accounts for the value of a face card
 		card = 10;
 	}
 	
 	if (Player == 0){
+		printf("Dealer drew a %s of %s\n", cardName, suit);
 		if (card == 1){ //Checks if card is an ace and assigns any ace as 11
 			dealerAceTracker += 1;
 			card == 11;
@@ -59,6 +66,7 @@ void dealCard(bool Player){
 	}
 	
 	if (Player == 1){
+		printf("Player drew a %s of %s\n", cardName, suit);
 		if (card == 1){ //Checks if card is an ace and assigns any ace as 11
 			playerAceTracker += 1;
 			card == 11;
@@ -80,7 +88,7 @@ void main(){
 	shuffleDeck();
 	dealCard(1);
 	dealCard(1);
-	printf("%d", playerScore);
+	printf("current score: %d", playerScore);
 	
 	
 }
